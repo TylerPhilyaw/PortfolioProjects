@@ -29,7 +29,7 @@ FROM PortfolioProject..CovidDeaths
 WHERE continent is not null
 Order By 1,2
 
---Looking at countries with highest infection rate compared to population
+--Looking at Countries with Highest Infection Rate Compared to Population
 
 SELECT location,  population, MAX (total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS PercentPopulationInfected
 FROM PortfolioProject..CovidDeaths
@@ -37,7 +37,7 @@ WHERE continent is not null
 Group By location,  population
 Order By PercentPopulationInfected desc
 
---Showing Countries with Highest Death Count per Population
+--Showing Countries with Highest Death Count Per Population
 
 SELECT location,MAX(CAST(total_deaths AS int)) AS TotalDeathCount
 FROM PortfolioProject..CovidDeaths
